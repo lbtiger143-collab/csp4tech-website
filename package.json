@@ -1,0 +1,10 @@
+{
+  "name": "csp4tech-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "CSP4TECH marketing site — zero-dependency static site generator (plain Node.js, no npm packages required).",
+  "scripts": {
+    "build": "node generator/build.js",
+    "check-links": "node checklinks.js"
+  }
+}
