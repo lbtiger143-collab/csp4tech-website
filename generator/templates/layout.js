@@ -1,4 +1,5 @@
 const config = require("../data/config");
+const { organizationSchema } = require("./schema");
 
 function groupByCategory(products) {
   const map = {};
@@ -105,6 +106,7 @@ function footer(products) {
             <a href="${config.social.facebook}" aria-label="Facebook">f</a>
             <a href="${config.social.instagram}" aria-label="Instagram">ig</a>
           </div>
+          <img src="/images/zoho-partner-badge.png" alt="Zoho Authorized Partner badge" class="footer-badge" style="margin-top:18px;" width="220" height="61">
         </div>
         ${groups
           .map(
@@ -161,6 +163,7 @@ function page({ title, description, path, bodyHtml, products, extraHead = "" }) 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+${organizationSchema()}
 ${extraHead}
 </head>
 <body>

@@ -1,4 +1,5 @@
 const config = require("../data/config");
+const faq = require("../data/faq");
 
 module.exports = function home(products, blogPosts) {
   const featured = products.filter((p) =>
@@ -9,7 +10,7 @@ module.exports = function home(products, blogPosts) {
   return `
   <section class="hero">
     <div class="container hero-inner">
-      <span class="eyebrow">✓ Zoho Authorized Partner</span>
+      <img src="/images/zoho-partner-badge.png" alt="Zoho Authorized Partner badge" class="partner-badge" width="220" height="61">
       <h1>Certified Zoho Partner for <em>Lebanon</em></h1>
       <p class="lead">End-to-end Zoho consulting: implementation, migration, integrations, and ongoing support across the full Zoho suite — with Arabic/English (RTL) experience and a local Beirut team.</p>
       <div class="hero-actions">
@@ -123,6 +124,26 @@ module.exports = function home(products, blogPosts) {
             <span class="read-more">Read article →</span>
           </div>
         </a>`
+          )
+          .join("")}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container" style="max-width:780px;">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>Common questions before you get started</h2>
+      </div>
+      <div class="faq">
+        ${faq
+          .map(
+            (item) => `
+        <details>
+          <summary>${item.q}</summary>
+          <p>${item.a}</p>
+        </details>`
           )
           .join("")}
       </div>

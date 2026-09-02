@@ -44,7 +44,7 @@ module.exports = function about() {
         <h2>Certified, and held to a real quality standard</h2>
       </div>
       <div class="grid grid-3">
-        <div class="card"><div class="icon">✓</div><h3>Zoho Authorized Partner</h3><p>Officially certified to implement, customize, and support the Zoho product suite.</p></div>
+        <div class="card"><img src="/images/zoho-partner-badge.png" alt="Zoho Authorized Partner badge" style="height:32px;width:auto;margin-bottom:14px;" width="220" height="61"><h3>Zoho Authorized Partner</h3><p>Officially certified to implement, customize, and support the Zoho product suite.</p></div>
         <div class="card"><div class="icon">🎓</div><h3>Certified Consultants</h3><p>Certified across Zoho CRM, Books, People, and Creator — not generalists learning on your project.</p></div>
         <div class="card"><div class="icon">🌐</div><h3>${config.languages}</h3><p>We work with your team in the language they're most comfortable in, including full Arabic/RTL support.</p></div>
       </div>
