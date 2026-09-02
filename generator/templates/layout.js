@@ -53,7 +53,7 @@ function header(products, activePath) {
   return `
   <header class="site-header">
     <div class="container">
-      <a href="/" class="brand"><img src="/images/logo.svg" alt="" class="brand-mark" width="34" height="34"> CSP4TECH</a>
+      <a href="/" class="brand"><img src="/images/logo-mark.png" alt="" class="brand-mark" width="34" height="34"> CSP4TECH</a>
       <nav class="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="/services.html" class="nav-link">Services</a></li>
@@ -149,12 +149,14 @@ function page({ title, description, path, bodyHtml, products, extraHead = "" }) 
 <title>${title}</title>
 <meta name="description" content="${description}">
 <link rel="canonical" href="${config.domain}${path}">
-<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<link rel="icon" href="/images/logo-mark.png" type="image/png">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${config.domain}${path}">
+<meta property="og:image" content="${config.domain}/images/og-banner.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${config.domain}/images/og-banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">

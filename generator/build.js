@@ -37,7 +37,9 @@ function copyAssets() {
   fs.mkdirSync(path.join(DIST, "images"), { recursive: true });
   fs.copyFileSync(path.join(assetsDir, "style.css"), path.join(DIST, "css", "style.css"));
   fs.copyFileSync(path.join(assetsDir, "main.js"), path.join(DIST, "js", "main.js"));
-  fs.copyFileSync(path.join(assetsDir, "logo.svg"), path.join(DIST, "images", "logo.svg"));
+  // Real CSP4TECH brand assets (replaced the placeholder recreated mark).
+  fs.copyFileSync(path.join(assetsDir, "logo-mark.png"), path.join(DIST, "images", "logo-mark.png"));
+  fs.copyFileSync(path.join(assetsDir, "og-banner.jpg"), path.join(DIST, "images", "og-banner.jpg"));
 }
 
 let pageCount = 0;
