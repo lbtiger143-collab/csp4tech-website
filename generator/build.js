@@ -58,8 +58,8 @@ function build() {
 
   // Home
   emit("index.html", {
-    title: "Zoho Partner Lebanon | CRM, Accounting, HR & ERP Software in Beirut | CSP4TECH",
-    description: `${config.siteName} is a Zoho Authorized Partner in Beirut, Lebanon — CRM, accounting, HR & payroll, inventory, and custom-app implementation, migration & support for Lebanese SMEs and enterprises.`,
+    title: "Zoho Partner Lebanon | CRM, Accounting & HR Software | CSP4TECH",
+    description: "Zoho Authorized Partner in Beirut, Lebanon. CRM, accounting, HR, and inventory implementation, migration & support for Lebanese SMEs and enterprises.",
     path: "/",
     bodyHtml: homeTpl(products, blogPosts),
     extraHead: faqSchema(faq),
@@ -165,15 +165,39 @@ function build() {
     })
   );
 
-  // sitemap.xml
-  const urls = [
-    "/", "/about.html", "/contact-us.html", "/services.html", "/zoho-suites.html", "/zoho-products/", "/blog/",
-    ...products.map((p) => `/zoho-products/${p.slug}.html`),
-    ...blogPosts.map((b) => `/blog/${b.slug}.html`),
-  ];
+  // sitemap.xml — lastmod/changefreq/priority so crawlers can prioritize and
+  // detect freshness rather than treating every URL identically.
+  const buildDate = new Date().toISOString().slice(0, 10);
+  const staticUrls = [
+    { loc: "/", changefreq: "weekly", priority: "1.0" },
+    { loc: "/about.html", changefreq: "monthly", priority: "0.7" },
+    { loc: "/contact-us.html", changefreq: "monthly", priority: "0.8" },
+    { loc: "/services.html", changefreq: "monthly", priority: "0.9" },
+    { loc: "/zoho-suites.html", changefreq: "monthly", priority: "0.7" },
+    { loc: "/zoho-products/", changefreq: "weekly", priority: "0.9" },
+    { loc: "/blog/", changefreq: "weekly", priority: "0.8" },
+  ].map((u) => ({ ...u, lastmod: buildDate }));
+  const productUrls = products.map((p) => ({
+    loc: `/zoho-products/${p.slug}.html`,
+    lastmod: buildDate,
+    changefreq: "monthly",
+    priority: "0.8",
+  }));
+  const blogUrls = blogPosts.map((b) => ({
+    loc: `/blog/${b.slug}.html`,
+    lastmod: new Date(b.date).toISOString().slice(0, 10),
+    changefreq: "yearly",
+    priority: "0.6",
+  }));
+  const allUrls = [...staticUrls, ...productUrls, ...blogUrls];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url><loc>${config.domain}${u}</loc></url>`).join("\n")}
+${allUrls
+  .map(
+    (u) =>
+      `  <url><loc>${config.domain}${u.loc}</loc><lastmod>${u.lastmod}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`
+  )
+  .join("\n")}
 </urlset>`;
   write("sitemap.xml", sitemap);
 

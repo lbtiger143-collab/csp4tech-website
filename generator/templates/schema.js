@@ -3,6 +3,7 @@ const config = require("../data/config");
 // Convert "Mon–Sat, 9:00 AM – 6:00 PM (Beirut)" into schema.org's "Mo-Sa 09:00-18:00" shape.
 // Kept as a plain constant here (rather than parsed) so it stays obviously correct/edit-able.
 const OPENING_HOURS = "Mo-Sa 09:00-18:00";
+const FULL_ADDRESS = `${config.siteName}, Beirut Digital District, Block 1499, Floor 1, Beirut, Lebanon`;
 
 function ld(obj) {
   return `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
@@ -27,7 +28,15 @@ function organizationSchema() {
       addressCountry: "LB",
     },
     areaServed: "Lebanon",
+    knowsLanguage: ["en", "ar"],
     openingHours: OPENING_HOURS,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(FULL_ADDRESS)}`,
     sameAs: Object.values(config.social),
   });
 }

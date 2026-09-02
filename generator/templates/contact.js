@@ -58,6 +58,7 @@ module.exports = function contact() {
           <div class="office-card">
             <h4>Beirut, Lebanon — Head Office</h4>
             <p style="font-size:.9rem;">${config.address.lebanon}</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${config.siteName}, ${config.address.lebanon}`)}" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" style="margin-top:12px;">Get Directions</a>
           </div>
         </div>
       </div>

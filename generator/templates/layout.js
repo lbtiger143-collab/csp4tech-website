@@ -152,12 +152,16 @@ function page({ title, description, path, bodyHtml, products, extraHead = "" }) 
 <meta name="description" content="${description}">
 <link rel="canonical" href="${config.domain}${path}">
 <link rel="icon" href="/images/logo-mark.png" type="image/png">
+<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="${config.siteName}">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${config.domain}${path}">
 <meta property="og:image" content="${config.domain}/images/og-banner.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@csp4tech">
 <meta name="twitter:image" content="${config.domain}/images/og-banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
