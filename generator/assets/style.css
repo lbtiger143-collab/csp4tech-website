@@ -133,8 +133,42 @@ section { padding: 64px 0; }
 .stat-grid .stat-num { font-size: 2.1rem; font-weight: 800; color: var(--color-primary-dark); }
 .stat-grid .stat-label { font-size: 0.85rem; color: var(--color-ink-soft); font-weight: 600; }
 
-.trusted-strip { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
-.trusted-logo { display: flex; align-items: center; justify-content: center; height: 56px; width: 150px; border: 1px dashed var(--color-border); border-radius: var(--radius-sm); color: var(--color-ink-soft); font-size: 0.82rem; font-weight: 700; background: var(--color-surface-alt); }
+.trusted-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.trusted-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  animation: trusted-scroll 26s linear infinite;
+}
+.trusted-marquee:hover .trusted-track { animation-play-state: paused; }
+@keyframes trusted-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.trusted-logo {
+  flex: none;
+  display: flex; align-items: center; justify-content: center;
+  height: 56px; width: 150px;
+  border: 1px dashed var(--color-border); border-radius: var(--radius-sm);
+  color: var(--color-ink-soft); font-size: 0.82rem; font-weight: 700;
+  background: var(--color-surface-alt);
+}
+/* Once real client logos are dropped in as <img> instead of text, this keeps
+   them a uniform height and subdued until hovered — standard "trusted by" treatment. */
+.trusted-logo img {
+  max-height: 34px; max-width: 130px; width: auto; object-fit: contain;
+  filter: grayscale(1) opacity(0.6); transition: filter .2s ease;
+}
+.trusted-logo:hover img { filter: grayscale(0) opacity(1); }
+@media (prefers-reduced-motion: reduce) {
+  .trusted-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
+  .trusted-dup { display: none; }
+}
 
 /* Product / feature list rows */
 .feature-list { display: grid; gap: 12px; }

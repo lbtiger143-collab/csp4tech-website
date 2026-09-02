@@ -11,7 +11,7 @@ module.exports = {
   phone: { display: "+961 78 744 789", href: "96178744789" },
   whatsapp: "96178744789",
   hours: "Mon–Sat, 9:00 AM – 6:00 PM (Beirut)",
-  languages: "Arabic, English, French",
+  languages: "Arabic, English",
   address: {
     lebanon: "Beirut Digital District, Block 1499, Floor 1, Beirut, Lebanon",
   },

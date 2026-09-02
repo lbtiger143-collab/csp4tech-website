@@ -28,8 +28,13 @@ module.exports = function home(products, blogPosts) {
   <section>
     <div class="container">
       <p class="text-center" style="font-weight:700;color:var(--color-ink-soft);margin-bottom:20px;">Trusted by businesses across Lebanon</p>
-      <div class="trusted-strip">
-        ${config.trustedByPlaceholders.map((name) => `<div class="trusted-logo">${name}</div>`).join("")}
+      <div class="trusted-marquee">
+        <div class="trusted-track">
+          ${config.trustedByPlaceholders.map((name) => `<div class="trusted-logo">${name}</div>`).join("")}
+          ${config.trustedByPlaceholders
+            .map((name) => `<div class="trusted-logo trusted-dup" aria-hidden="true">${name}</div>`)
+            .join("")}
+        </div>
       </div>
       <p class="text-center" style="font-size:.8rem;margin-top:14px;color:#9C9AC4;">Placeholder logos — swap in real client logos once approved for use. See README.</p>
     </div>
