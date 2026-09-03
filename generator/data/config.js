@@ -16,9 +16,8 @@ module.exports = {
     lebanon: "Beirut Digital District, Block 1499, Floor 1, Beirut, Lebanon",
   },
   social: {
-    linkedin: "https://www.linkedin.com/company/csp4tech",
-    twitter: "https://twitter.com/csp4tech",
-    facebook: "https://www.facebook.com/csp4tech",
+    linkedin: "https://www.linkedin.com/in/mohamad-zeib-23052621a",
+    facebook: "https://www.facebook.com/share/19cuA5S8ZB/",
     instagram: "https://www.instagram.com/csp4tech",
   },
   stats: {
@@ -30,10 +29,13 @@ module.exports = {
     zohoAppsImplemented: "39",
     certifiedExperts: "100%",
   },
-  // Real, named local partners the client will swap in — no stock photos, no
-  // fabricated testimonials standing in as real ones. See README "Trusted by" section.
-  trustedByPlaceholders: [
-    "Your Client Co.", "Partner Group", "Client Name", "Company Ltd.", "Brand Co.", "Client Six",
+  // Real client logos for the "trusted by" strip. Add more objects here as
+  // logos are approved — the marquee and structured data both read this list.
+  trustedByClients: [
+    { name: "areeba", file: "areeba.png" },
+    { name: "Allo Taxi", file: "allo-taxi.png" },
+    { name: "Wood & Gas", file: "wood-and-gas.png" },
+    { name: "Atelier Trente Trois", file: "atelier-trente-trois.png" },
   ],
   nav: {
     productCategories: [

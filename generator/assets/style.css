@@ -155,16 +155,13 @@ section { padding: 64px 0; }
 .trusted-logo {
   flex: none;
   display: flex; align-items: center; justify-content: center;
-  height: 56px; width: 150px;
-  border: 1px dashed var(--color-border); border-radius: var(--radius-sm);
-  color: var(--color-ink-soft); font-size: 0.82rem; font-weight: 700;
-  background: var(--color-surface-alt);
+  height: 56px; min-width: 120px; padding: 0 12px;
 }
-/* Once real client logos are dropped in as <img> instead of text, this keeps
-   them a uniform height and subdued until hovered — standard "trusted by" treatment. */
+/* Real client logos — uniform height, subdued until hovered (standard
+   "trusted by" treatment). */
 .trusted-logo img {
-  max-height: 34px; max-width: 130px; width: auto; object-fit: contain;
-  filter: grayscale(1) opacity(0.6); transition: filter .2s ease;
+  max-height: 36px; max-width: 140px; width: auto; object-fit: contain;
+  filter: grayscale(1) opacity(0.65); transition: filter .2s ease;
 }
 .trusted-logo:hover img { filter: grayscale(0) opacity(1); }
 @media (prefers-reduced-motion: reduce) {

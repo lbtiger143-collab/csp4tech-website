@@ -36,13 +36,20 @@ function copyAssets() {
   const assetsDir = path.join(__dirname, "assets");
   fs.mkdirSync(path.join(DIST, "css"), { recursive: true });
   fs.mkdirSync(path.join(DIST, "js"), { recursive: true });
-  fs.mkdirSync(path.join(DIST, "images"), { recursive: true });
+  fs.mkdirSync(path.join(DIST, "images", "clients"), { recursive: true });
   fs.copyFileSync(path.join(assetsDir, "style.css"), path.join(DIST, "css", "style.css"));
   fs.copyFileSync(path.join(assetsDir, "main.js"), path.join(DIST, "js", "main.js"));
   // Real CSP4TECH brand assets (replaced the placeholder recreated mark).
   fs.copyFileSync(path.join(assetsDir, "logo-mark.png"), path.join(DIST, "images", "logo-mark.png"));
   fs.copyFileSync(path.join(assetsDir, "og-banner.jpg"), path.join(DIST, "images", "og-banner.jpg"));
   fs.copyFileSync(path.join(assetsDir, "zoho-partner-badge.png"), path.join(DIST, "images", "zoho-partner-badge.png"));
+  // Real client logos for the "trusted by" marquee.
+  for (const client of config.trustedByClients) {
+    fs.copyFileSync(
+      path.join(assetsDir, "clients", client.file),
+      path.join(DIST, "images", "clients", client.file)
+    );
+  }
 }
 
 let pageCount = 0;
