@@ -157,13 +157,10 @@ section { padding: 64px 0; }
   display: flex; align-items: center; justify-content: center;
   height: 56px; min-width: 120px; padding: 0 12px;
 }
-/* Real client logos — uniform height, subdued until hovered (standard
-   "trusted by" treatment). */
+/* Real client logos — uniform height, shown in full brand color. */
 .trusted-logo img {
   max-height: 36px; max-width: 140px; width: auto; object-fit: contain;
-  filter: grayscale(1) opacity(0.65); transition: filter .2s ease;
 }
-.trusted-logo:hover img { filter: grayscale(0) opacity(1); }
 @media (prefers-reduced-motion: reduce) {
   .trusted-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
   .trusted-dup { display: none; }
