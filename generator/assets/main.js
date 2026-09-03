@@ -35,4 +35,69 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
     });
   }
+
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // ---------- Scroll-reveal ----------
+  // Fade/slide common content blocks in as they enter the viewport. Applied
+  // entirely from JS (not baked into the server-rendered HTML) so anyone
+  // without JS, and any crawler that doesn't run it, still gets the full
+  // page content visible immediately — this is purely additive polish.
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var revealTargets = document.querySelectorAll(
+      ".section-head, .card, .blog-card, .stat-grid > div, .faq details, .trusted-marquee, .related-products, .office-card, .form-card, .contact-info-list .item"
+    );
+    var revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealTargets.forEach(function (el, i) {
+      el.classList.add("reveal");
+      // Small stagger within a row of siblings (cards in the same grid)
+      // reads as intentional rather than everything popping in at once.
+      el.style.transitionDelay = (i % 3) * 60 + "ms";
+      revealObserver.observe(el);
+    });
+  }
+
+  // ---------- Counting-up stats ----------
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var statEls = document.querySelectorAll(".stat-num");
+    var statObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          statObserver.unobserve(entry.target);
+          var el = entry.target;
+          var match = el.textContent.match(/^(\D*)(\d+)(.*)$/);
+          if (!match) return; // no digits found (shouldn't happen) — leave as-is
+          var prefix = match[1], target = parseInt(match[2], 10), suffix = match[3];
+          var duration = 1200;
+          var start = null;
+          function step(ts) {
+            if (start === null) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            var current = Math.floor(eased * target);
+            el.textContent = prefix + current + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              el.textContent = prefix + target + suffix; // exact final text
+            }
+          }
+          requestAnimationFrame(step);
+        });
+      },
+      { threshold: 0.4 }
+    );
+    statEls.forEach(function (el) { statObserver.observe(el); });
+  }
 });

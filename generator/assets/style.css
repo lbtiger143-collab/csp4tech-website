@@ -47,6 +47,7 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
   cursor: pointer; border: 1px solid transparent; transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 .btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(0.97); }
 .btn-primary { background: var(--color-primary); color: #fff; box-shadow: var(--shadow-sm); }
 .btn-primary:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-md); }
 .btn-ghost { background: transparent; border-color: var(--color-border); color: var(--color-ink); }
@@ -101,7 +102,33 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
 }
 
 /* ---------- Hero ---------- */
-.hero { padding: 72px 0 56px; background: linear-gradient(180deg, var(--color-primary-light) 0%, #fff 100%); }
+.hero {
+  position: relative; overflow: hidden;
+  padding: 72px 0 56px; background: linear-gradient(180deg, var(--color-primary-light) 0%, #fff 100%);
+}
+/* Soft animated color blobs drifting behind the hero content — pure CSS,
+   no images. Kept subtle (low opacity, heavy blur) so it reads as depth,
+   not decoration. */
+.hero::before, .hero::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  border-radius: 50%; filter: blur(70px); opacity: 0.32;
+  animation: hero-drift 20s ease-in-out infinite alternate;
+}
+.hero::before {
+  width: 420px; height: 420px; background: var(--color-primary);
+  top: -140px; left: -100px;
+}
+.hero::after {
+  width: 380px; height: 380px; background: var(--color-accent);
+  bottom: -160px; right: -80px;
+  animation-duration: 24s; animation-delay: -6s;
+}
+@keyframes hero-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(36px, -24px) scale(1.1); }
+  100% { transform: translate(-24px, 18px) scale(0.94); }
+}
+.hero > .container { position: relative; z-index: 1; }
 .hero-inner { max-width: 780px; margin: 0 auto; text-align: center; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--color-border); padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; color: var(--color-primary-dark); box-shadow: var(--shadow-sm); margin-bottom: 22px; }
 .partner-badge { height: 44px; width: auto; margin: 0 auto 24px; display: block; filter: drop-shadow(0 2px 6px rgba(30,27,46,0.12)); }
@@ -125,9 +152,10 @@ section { padding: 64px 0; }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-.card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 26px; box-shadow: var(--shadow-sm); transition: box-shadow .15s ease, transform .15s ease; }
-.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-.card .icon { width: 44px; height: 44px; border-radius: var(--radius-sm); background: var(--color-primary-light); color: var(--color-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-weight: 800; }
+.card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 26px; box-shadow: var(--shadow-sm); transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; }
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--color-primary-light); }
+.card .icon { width: 44px; height: 44px; border-radius: var(--radius-sm); background: var(--color-primary-light); color: var(--color-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-weight: 800; transition: transform .2s ease; }
+.card:hover .icon { transform: scale(1.1); }
 .card h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .card p { font-size: 0.92rem; margin-bottom: 0; }
 
@@ -164,7 +192,19 @@ section { padding: 64px 0; }
 @media (prefers-reduced-motion: reduce) {
   .trusted-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
   .trusted-dup { display: none; }
+  .hero::before, .hero::after { animation: none; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
+
+/* ---------- Scroll-reveal ---------- */
+/* JS adds .reveal to common content blocks on load, then .is-visible once
+   each block scrolls into view (see main.js). No-JS visitors and crawlers
+   simply see the static, fully-visible page — this is purely additive. */
+.reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .6s cubic-bezier(.2,.7,.3,1), transform .6s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 /* Product / feature list rows */
 .feature-list { display: grid; gap: 12px; }
@@ -199,7 +239,9 @@ section { padding: 64px 0; }
 .related-products a:hover { border-color: var(--color-primary); color: var(--color-primary); }
 
 /* Blog */
-.blog-card { border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+.blog-card { border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: box-shadow .2s ease, transform .2s ease; }
+.blog-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.blog-card:hover .read-more { text-decoration: underline; }
 .blog-card .body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .blog-card .meta { font-size: 0.78rem; color: var(--color-ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
 .blog-card h3 { font-size: 1.05rem; }
