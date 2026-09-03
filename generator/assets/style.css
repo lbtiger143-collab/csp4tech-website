@@ -1,11 +1,15 @@
 /* CSP4TECH — refreshed design system. Zero build tooling: plain CSS, custom properties. */
 
 :root {
-  --color-primary: #4338CA;      /* indigo */
-  --color-primary-dark: #312E81;
-  --color-primary-light: #EEF2FF;
-  --color-accent: #F59E0B;       /* warm amber accent */
-  --color-accent-dark: #B45309;
+  /* Teal + orange, pulled from the CSP4TECH logo mark. --color-primary is
+     deepened slightly from the mark's brightest teal (#00A89C) so white
+     text on it clears WCAG AA contrast (4.5:1) — the brighter hue would
+     only pass ~3:1. */
+  --color-primary: #008077;      /* teal — from the CSP4TECH logo mark */
+  --color-primary-dark: #005C56;
+  --color-primary-light: #EFFBFA;
+  --color-accent: #F2661E;       /* orange — from the CSP4TECH logo mark */
+  --color-accent-dark: #C94B0F;
   --color-ink: #1E1B2E;
   --color-ink-soft: #4B4A5E;
   --color-border: #E4E2F1;
