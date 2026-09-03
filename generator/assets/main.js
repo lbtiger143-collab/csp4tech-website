@@ -12,9 +12,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var form = document.querySelector("[data-contact-form]");
   if (form) {
+    // Basic spam protection: a honeypot field real visitors never see or
+    // fill (bots that auto-fill every field will), plus a minimum time
+    // between page load and submit (bots tend to submit almost instantly).
+    // Neither is foolproof, but both stop the bulk of automated spam with
+    // no friction for real visitors and no CAPTCHA to load.
+    var loadedAtField = form.querySelector("[data-form-loaded-at]");
+    if (loadedAtField) loadedAtField.value = String(Date.now());
+    var MIN_SUBMIT_MS = 2500;
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var status = form.querySelector("[data-form-status]");
+      var honeypot = form.querySelector("#website");
+      var loadedAt = loadedAtField ? parseInt(loadedAtField.value, 10) : 0;
+      var submittedTooFast = loadedAt && Date.now() - loadedAt < MIN_SUBMIT_MS;
+
+      if ((honeypot && honeypot.value.trim()) || submittedTooFast) {
+        // Likely a bot. Show the same success message as a real submission
+        // (so scripts don't learn to detect and route around this check)
+        // but don't actually send anything.
+        if (status) {
+          status.textContent = "Thanks — we've received your message and will reply within one business day.";
+          status.style.color = "#059669";
+        }
+        form.reset();
+        if (loadedAtField) loadedAtField.value = String(Date.now());
+        return;
+      }
+
       var required = form.querySelectorAll("[required]");
       var valid = true;
       required.forEach(function (field) {
@@ -33,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         status.style.color = "#059669";
       }
       form.reset();
+      if (loadedAtField) loadedAtField.value = String(Date.now());
     });
   }
 

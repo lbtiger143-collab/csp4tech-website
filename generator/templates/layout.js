@@ -137,6 +137,7 @@ function footer(products) {
       </div>
       <div class="footer-bottom">
         <span>&copy; ${new Date().getFullYear()} CSP4TECH. All rights reserved.</span>
+        <span><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Use</a></span>
         <span>${config.address.lebanon}</span>
       </div>
     </div>

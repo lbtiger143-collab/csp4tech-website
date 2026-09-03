@@ -22,7 +22,7 @@ module.exports = function suites(products) {
         <h2 style="margin-top:8px;">${one.name}</h2>
         <p>${one.description}</p>
         <ul class="feature-list" style="margin-top:14px;">
-          ${one.features.map((f) => `<li><span class="check">✓</span>${f}</li>`).join("")}
+          ${one.features.map((f) => `<li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>${f}</li>`).join("")}
         </ul>
         <a href="/zoho-products/one.html" class="btn btn-primary btn-sm" style="margin-top:16px;">Learn more about Zoho One</a>
       </div>
@@ -43,7 +43,7 @@ module.exports = function suites(products) {
           <h3>${p.name}</h3>
           <p>${p.description}</p>
           <ul class="feature-list" style="margin-top:10px;">
-            ${p.features.slice(0, 3).map((f) => `<li><span class="check">✓</span>${f}</li>`).join("")}
+            ${p.features.slice(0, 3).map((f) => `<li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>${f}</li>`).join("")}
           </ul>
           <a href="/zoho-products/${p.slug}.html" class="btn btn-ghost btn-sm" style="margin-top:14px;">Learn more</a>
         </div>`

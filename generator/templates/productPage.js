@@ -27,7 +27,7 @@ module.exports = function productPage(product, allProducts) {
       <div class="card">
         <h3>Key features</h3>
         <ul class="feature-list">
-          ${product.features.map((f) => `<li><span class="check">✓</span>${f}</li>`).join("")}
+          ${product.features.map((f) => `<li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>${f}</li>`).join("")}
         </ul>
       </div>
     </div>

@@ -49,9 +49,9 @@ module.exports = function home(products, blogPosts) {
         <h2>A local partner, not an overseas support queue</h2>
       </div>
       <div class="grid grid-3">
-        <div class="card"><div class="icon">✓</div><h3>Certified &amp; ISO-aligned</h3><p>Certified Zoho consultants for CRM, Books, People, and Creator, working to ISO-aligned quality standards.</p></div>
-        <div class="card"><div class="icon">🇱🇧</div><h3>Built for Lebanon</h3><p>Arabic/English (RTL) experience, USD/LBP multi-currency, and VAT-ready accounting configuration from day one.</p></div>
-        <div class="card"><div class="icon">⚡</div><h3>Fast time-to-value</h3><p>Most implementations go live in 2–8 weeks, not months of scope creep.</p></div>
+        <div class="card"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Certified &amp; ISO-aligned</h3><p>Certified Zoho consultants for CRM, Books, People, and Creator, working to ISO-aligned quality standards.</p></div>
+        <div class="card"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Built for Lebanon</h3><p>Arabic/English (RTL) experience, USD/LBP multi-currency, and VAT-ready accounting configuration from day one.</p></div>
+        <div class="card"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><h3>Fast time-to-value</h3><p>Most implementations go live in 2–8 weeks, not months of scope creep.</p></div>
       </div>
     </div>
   </section>

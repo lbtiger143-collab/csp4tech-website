@@ -15,6 +15,8 @@ const productsIndexTpl = require("./templates/productsIndex");
 const productPageTpl = require("./templates/productPage");
 const blogIndexTpl = require("./templates/blogIndex");
 const blogPostTpl = require("./templates/blogPost");
+const privacyTpl = require("./templates/privacy");
+const termsTpl = require("./templates/terms");
 const { breadcrumbSchema, articleSchema, serviceSchema, faqSchema } = require("./templates/schema");
 const faq = require("./data/faq");
 
@@ -152,6 +154,22 @@ function build() {
     });
   });
 
+  // Privacy Policy
+  emit("privacy-policy.html", {
+    title: "Privacy Policy | CSP4TECH",
+    description: "How CSP4TECH collects, uses, and protects information submitted through this website.",
+    path: "/privacy-policy.html",
+    bodyHtml: privacyTpl(),
+  });
+
+  // Terms of Use
+  emit("terms.html", {
+    title: "Terms of Use | CSP4TECH",
+    description: "The terms that govern your use of the CSP4TECH website.",
+    path: "/terms.html",
+    bodyHtml: termsTpl(),
+  });
+
   // 404 page
   write(
     "404.html",
@@ -183,6 +201,8 @@ function build() {
     { loc: "/zoho-suites.html", changefreq: "monthly", priority: "0.7" },
     { loc: "/zoho-products/", changefreq: "weekly", priority: "0.9" },
     { loc: "/blog/", changefreq: "weekly", priority: "0.8" },
+    { loc: "/privacy-policy.html", changefreq: "yearly", priority: "0.3" },
+    { loc: "/terms.html", changefreq: "yearly", priority: "0.3" },
   ].map((u) => ({ ...u, lastmod: buildDate }));
   const productUrls = products.map((p) => ({
     loc: `/zoho-products/${p.slug}.html`,
