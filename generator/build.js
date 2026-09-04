@@ -276,7 +276,7 @@ ${allUrls
 
   const llmsTxt = `# ${config.siteName}
 
-> ${config.siteName} is a Zoho Authorized Partner based in Beirut, Lebanon, providing end-to-end Zoho consulting — implementation, migration, integrations, customization, training, and ongoing support — across the full Zoho suite (39 apps) for Lebanese SMEs and enterprises, serving clients since ${config.stats.founded}. The team also has hands-on implementation experience (not a formal certification/partnership) with Odoo, Microsoft (Dynamics 365, Power Platform, Microsoft 365), Oracle (NetSuite, Fusion/EBS), and Salesforce.
+> ${config.siteName} is a Zoho Authorized Partner based in Beirut, Lebanon, providing end-to-end Zoho consulting — implementation, migration, integrations, customization, training, and ongoing support — across the full Zoho suite (39 apps) for Lebanese SMEs and enterprises, serving clients since ${config.stats.founded}. The team also has hands-on implementation experience (not a formal certification/partnership) with Odoo, Microsoft (Dynamics 365, Power Platform, Microsoft 365), Oracle (NetSuite, Fusion/EBS), Salesforce, and Shopify.
 
 ## Company facts
 

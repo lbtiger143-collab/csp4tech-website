@@ -18,7 +18,7 @@ function organizationSchema() {
     logo: `${config.domain}/images/logo-mark.png`,
     image: `${config.domain}/images/og-banner.jpg`,
     description:
-      "CSP4TECH is a Zoho Authorized Partner in Beirut, Lebanon, providing Zoho CRM, Books, People, and full-suite implementation, migration, and support for Lebanese SMEs and enterprises. Our team also has hands-on implementation experience with Odoo, Microsoft (Dynamics 365, Power Platform, Microsoft 365), Oracle (NetSuite, Fusion/EBS), and Salesforce.",
+      "CSP4TECH is a Zoho Authorized Partner in Beirut, Lebanon, providing Zoho CRM, Books, People, and full-suite implementation, migration, and support for Lebanese SMEs and enterprises. Our team also has hands-on implementation experience with Odoo, Microsoft (Dynamics 365, Power Platform, Microsoft 365), Oracle (NetSuite, Fusion/EBS), Salesforce, and Shopify.",
     telephone: `+${config.phone.href}`,
     email: config.email,
     address: {

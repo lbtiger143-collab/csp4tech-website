@@ -64,4 +64,19 @@ module.exports = [
     ],
     useCase: "Best for sales and service teams already using — or evaluating — Salesforce as their CRM.",
   },
+  {
+    slug: "shopify",
+    name: "Shopify",
+    tagline: "Shopify store setup, customization & backend integration",
+    description:
+      "We build and configure Shopify stores — theme setup and customization, app configuration, and connecting the storefront to backend systems like a CRM or accounting platform (including Zoho) so orders, customers, and inventory stay in sync.",
+    capabilities: [
+      "Shopify store setup and theme customization",
+      "App and payment gateway configuration",
+      "Product catalog and inventory setup",
+      "Integration with CRM/accounting systems (e.g. Zoho, Odoo)",
+      "Ongoing store support and troubleshooting",
+    ],
+    useCase: "Best for businesses launching or replatforming an online store who also want it properly connected to their CRM, accounting, or inventory system.",
+  },
 ];
