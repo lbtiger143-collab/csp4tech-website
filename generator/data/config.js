@@ -6,7 +6,7 @@
 module.exports = {
   siteName: "CSP4TECH",
   domain: "https://www.csp4tech.com",
-  tagline: "Certified Zoho Partner — Lebanon",
+  tagline: "Certified Zoho Partner — Based in Lebanon, Serving Clients Worldwide",
   email: "info@csp4tech.com",
   phone: { display: "+961 78 744 789", href: "96178744789" },
   whatsapp: "96178744789",

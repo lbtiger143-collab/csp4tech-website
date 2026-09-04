@@ -4,7 +4,7 @@ module.exports = function blogIndex(posts) {
   <section class="hero" style="padding-bottom:36px;">
     <div class="container hero-inner">
       <span class="eyebrow">Blog</span>
-      <h1>Zoho guides for Lebanese businesses</h1>
+      <h1>Practical Zoho guides from our implementation team</h1>
       <p class="lead">Practical, Lebanon-specific writing on Zoho implementation, migration, and day-to-day operations — no generic filler.</p>
     </div>
   </section>

@@ -27,7 +27,7 @@ module.exports = function contact() {
           </div>
           <div class="form-grid-2">
             <div class="form-row"><label for="company">Company name *</label><input id="company" name="company" type="text" required></div>
-            <div class="form-row"><label for="mobile">Phone (+961 ...) *</label><input id="mobile" name="mobile" type="tel" required></div>
+            <div class="form-row"><label for="mobile">Phone (with country code) *</label><input id="mobile" name="mobile" type="tel" required></div>
           </div>
           <div class="form-row">
             <label for="services">What are you interested in?</label>

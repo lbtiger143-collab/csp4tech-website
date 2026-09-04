@@ -178,6 +178,11 @@ section { padding: 64px 0; }
   gap: 14px;
   width: max-content;
   animation: trusted-scroll 26s linear infinite;
+  /* Hints the browser to promote this to its own compositor layer, so the
+     translateX animation stays smooth (a per-frame CSS `filter` on the
+     logos previously defeated this — removed in favor of baking any
+     contrast fix directly into the image files instead). */
+  will-change: transform;
 }
 .trusted-marquee:hover .trusted-track { animation-play-state: paused; }
 @keyframes trusted-scroll {
@@ -187,19 +192,15 @@ section { padding: 64px 0; }
 .trusted-logo {
   flex: none;
   display: flex; align-items: center; justify-content: center;
-  height: 56px; min-width: 120px; padding: 0 16px;
-  /* Light card behind every logo — keeps pale/light-colored brand marks
-     (not just dark ones) legible against the page's white background. */
-  background: var(--color-surface-alt);
-  border-radius: var(--radius-sm);
+  height: 56px; min-width: 120px; padding: 0 12px;
 }
-/* Real client logos — uniform height, shown in full brand color. A soft
-   dark halo (shaped by each logo's own alpha channel) keeps very
-   light-colored marks readable without recoloring anyone's logo — it's
-   subtle enough not to change how the already-visible logos look. */
+/* Real client logos — uniform height, shown in full brand color. Any logo
+   that doesn't have enough native contrast for a white background (e.g. a
+   pale/cream mark) gets that fixed in the source image itself (a baked-in
+   card, tighter crop, etc.) rather than a live CSS effect — keeps this
+   animation cheap for the browser. */
 .trusted-logo img {
   max-height: 36px; max-width: 140px; width: auto; object-fit: contain;
-  filter: drop-shadow(0 0 0.6px rgba(30, 27, 46, 0.35)) drop-shadow(0 0 1.4px rgba(30, 27, 46, 0.22));
 }
 @media (prefers-reduced-motion: reduce) {
   .trusted-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }

@@ -5,15 +5,15 @@ module.exports = function about() {
   <section class="hero" style="padding-bottom:40px;">
     <div class="container hero-inner">
       <span class="eyebrow">About CSP4TECH</span>
-      <h1>Empowering Lebanese businesses through Zoho</h1>
-      <p class="lead">We're a Beirut-based Zoho Authorized Partner helping Lebanese SMEs and enterprises run their operations on one connected platform — implementation, migration, training, and support, delivered locally.</p>
+      <h1>Empowering businesses through Zoho — from Lebanon to the world</h1>
+      <p class="lead">We're a Beirut-based Zoho Authorized Partner helping SMEs and enterprises — in Lebanon and around the world — run their operations on one connected platform: implementation, migration, training, and support, delivered by a team that actually picks up the phone.</p>
     </div>
   </section>
 
   <section>
     <div class="container">
       <div class="stat-grid">
-        <div><div class="stat-num">${config.stats.founded}</div><div class="stat-label">Serving Lebanon since</div></div>
+        <div><div class="stat-num">${config.stats.founded}</div><div class="stat-label">In business since</div></div>
         <div><div class="stat-num">${config.stats.yearsExperience}</div><div class="stat-label">Of local expertise</div></div>
         <div><div class="stat-num">${config.stats.businessesServed}</div><div class="stat-label">Businesses onboarded</div></div>
         <div><div class="stat-num">${config.stats.zohoAppsImplemented}</div><div class="stat-label">Zoho apps we implement</div></div>
@@ -27,10 +27,10 @@ module.exports = function about() {
         <span class="kicker">Our story</span>
         <h2>Local expertise, not an outsourced ticket queue</h2>
         <p>CSP4TECH was founded to close a gap we kept seeing: Lebanese businesses adopting powerful software like Zoho, then getting generic, overseas support that didn't understand VAT rules, LBP/USD accounting, or the fact that half their sales conversations happen on WhatsApp.</p>
-        <p>Since ${config.stats.founded}, we've focused on exactly that — implementation and support that's built around how Lebanese businesses actually operate, delivered by a team based in Beirut Digital District.</p>
+        <p>Since ${config.stats.founded}, we've focused on exactly that — implementation and support built around how a business actually operates, not a generic template. Today that means clients across Lebanon, the region, and beyond, all delivered by a team based in Beirut Digital District.</p>
       </div>
       <div class="grid" style="gap:16px;">
-        <div class="card"><h3>Mission</h3><p>Give Lebanese businesses enterprise-grade tools without an enterprise-size budget or an overseas support desk.</p></div>
+        <div class="card"><h3>Mission</h3><p>Give growing businesses — wherever they're based — enterprise-grade tools without an enterprise-size budget or a faceless support desk.</p></div>
         <div class="card"><h3>How we work</h3><p>Discovery, configuration, migration, training, then ongoing support — a straightforward five-phase process, no black box.</p></div>
       </div>
     </div>
@@ -68,7 +68,7 @@ module.exports = function about() {
   <section>
     <div class="container">
       <div class="cta-band">
-        <h2>Want to work with a local Zoho partner?</h2>
+        <h2>Want to work with a Zoho partner that's actually reachable?</h2>
         <p>Tell us about your business and we'll put together a straightforward implementation plan.</p>
         <a href="/contact-us.html" class="btn btn-accent">Talk to Our Team</a>
       </div>

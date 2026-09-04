@@ -101,7 +101,7 @@ function footer(products) {
       <div class="footer-grid">
         <div>
           <div class="footer-brand">CSP4TECH</div>
-          <p style="color:#9C9AC4;font-size:0.88rem;max-width:280px;">${config.tagline}. End-to-end Zoho consulting for Lebanese businesses — implementation, migration, integrations, and ongoing support.</p>
+          <p style="color:#9C9AC4;font-size:0.88rem;max-width:280px;">${config.tagline}. End-to-end Zoho consulting for businesses in Lebanon and worldwide — implementation, migration, integrations, and ongoing support.</p>
           <div class="social-row" style="margin-top:16px;">
             <a href="${config.social.linkedin}" aria-label="LinkedIn" target="_blank" rel="noopener me">
               <svg width="16" height="16" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-339.9C24.09 108.1 0 83.5 0 53.6 0 23.7 24.1-.9 53.84-.9c29.7 0 53.84 24.6 53.84 53.6 0 29.9-24.14 54.4-53.84 54.4zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>

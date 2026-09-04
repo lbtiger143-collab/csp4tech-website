@@ -4,7 +4,7 @@ module.exports = [
   {
     slug: "crm", name: "Zoho CRM", category: "Sales & CRM",
     tagline: "One pipeline for every lead, deal, and follow-up.",
-    description: "Zoho CRM centralizes contacts, deals, and communication so your sales team stops chasing spreadsheets and starts closing. We configure pipelines, scoring, and automation around how your team actually sells in Lebanon.",
+    description: "Zoho CRM centralizes contacts, deals, and communication so your sales team stops chasing spreadsheets and starts closing. We configure pipelines, scoring, and automation around how your team actually sells — whether you're in Lebanon or anywhere else.",
     features: ["Custom pipelines & deal stages", "WhatsApp, call & email logging", "Workflow automation & approvals", "Sales forecasting & territory reports"],
     useCase: "Best for teams that need one source of truth for every customer conversation."
   },
@@ -54,8 +54,8 @@ module.exports = [
   // ---------- Finance & Operations ----------
   {
     slug: "books", name: "Zoho Books", category: "Finance & Operations",
-    tagline: "Accounting built for Lebanon's VAT and multi-currency reality.",
-    description: "Books handles invoicing, expense tracking, bank reconciliation, and VAT-ready reporting in USD and LBP, so your books stay accurate without a spreadsheet on the side.",
+    tagline: "Multi-currency, VAT-ready accounting — with deep Lebanon expertise built in.",
+    description: "Books handles invoicing, expense tracking, bank reconciliation, and VAT-ready reporting in any currency mix — including USD and LBP for Lebanon-based clients — so your books stay accurate without a spreadsheet on the side.",
     features: ["VAT-compliant invoicing", "Multi-currency (USD/LBP)", "Bank feed reconciliation", "Chart of accounts setup"],
     useCase: "Best for SMEs that need proper books without hiring a full finance team."
   },
@@ -90,7 +90,7 @@ module.exports = [
   {
     slug: "inventory", name: "Zoho Inventory", category: "Finance & Operations",
     tagline: "Stock, orders, and warehouses in one accurate view.",
-    description: "Inventory tracks stock across warehouses, automates reordering, and connects sales channels to real stock counts — built for the retail and wholesale operations we work with in Lebanon.",
+    description: "Inventory tracks stock across warehouses, automates reordering, and connects sales channels to real stock counts — built for the retail and wholesale operations we work with, in Lebanon and beyond.",
     features: ["Multi-warehouse tracking", "Reorder point automation", "Sales channel integrations", "Batch & serial tracking"],
     useCase: "Best for retail and wholesale businesses managing stock across multiple locations."
   },
