@@ -18,7 +18,6 @@ module.exports = function about() {
         <div><div class="stat-num">${config.stats.businessesServed}</div><div class="stat-label">Businesses onboarded</div></div>
         <div><div class="stat-num">${config.stats.zohoAppsImplemented}</div><div class="stat-label">Zoho apps we implement</div></div>
       </div>
-      <p class="text-center" style="font-size:.8rem;color:#9C9AC4;margin-top:10px;">One consistent set of numbers, used everywhere on this site.</p>
     </div>
   </section>
 
