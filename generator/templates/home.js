@@ -1,5 +1,6 @@
 const config = require("../data/config");
 const faq = require("../data/faq");
+const platforms = require("../data/platforms");
 
 module.exports = function home(products, blogPosts) {
   const featured = products.filter((p) =>
@@ -128,6 +129,13 @@ module.exports = function home(products, blogPosts) {
           )
           .join("")}
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="max-width:780px;text-align:center;">
+      <p style="font-size:.85rem;color:var(--color-ink-soft);">Beyond our Zoho specialty, our team also has hands-on implementation experience with ${platforms.map((p) => p.name).join(", ")}.
+      <a href="/platforms/" style="color:var(--color-primary);font-weight:600;">See other platforms →</a></p>
     </div>
   </section>
 

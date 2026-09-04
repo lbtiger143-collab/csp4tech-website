@@ -1,3 +1,5 @@
+const platforms = require("../data/platforms");
+
 module.exports = function services() {
   return `
   <section class="hero" style="padding-bottom:36px;">
@@ -55,6 +57,27 @@ module.exports = function services() {
   </section>
 
   <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Other platforms</span>
+        <h2>Also implemented beyond our Zoho specialty</h2>
+      </div>
+      <p style="max-width:640px;margin-bottom:24px;">Zoho is where we're an official Authorized Partner and where most of our work happens. Our team also has hands-on implementation experience — not a formal certification — with a few other platforms, for clients already using or evaluating them.</p>
+      <div class="grid grid-4">
+        ${platforms
+          .map(
+            (p) => `
+        <a href="/platforms/${p.slug}.html" class="card">
+          <h3 style="font-size:1.05rem;">${p.name}</h3>
+          <p style="font-size:.85rem;">${p.tagline}</p>
+        </a>`
+          )
+          .join("")}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
     <div class="container">
       <div class="cta-band">
         <h2>Not sure where to start?</h2>

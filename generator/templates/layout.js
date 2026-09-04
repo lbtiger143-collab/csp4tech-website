@@ -60,6 +60,7 @@ function header(products, activePath) {
           <li><a href="/services.html" class="nav-link">Services</a></li>
           <li>${megaMenu(products)}</li>
           <li><a href="/zoho-suites.html" class="nav-link">Zoho Suites</a></li>
+          <li><a href="/platforms/" class="nav-link">Other Platforms</a></li>
           <li class="nav-item has-mega">
             <a href="#" class="nav-link" aria-haspopup="true">Company <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
             <div class="mega-menu" style="grid-template-columns:1fr;width:220px;padding:12px;">
@@ -84,6 +85,7 @@ function header(products, activePath) {
     <a href="/services.html">Services</a>
     ${mobileProductGroups(products)}
     <a href="/zoho-suites.html">Zoho Suites</a>
+    <a href="/platforms/">Other Platforms</a>
     <a href="/about.html">About Us</a>
     <a href="/blog/">Blog</a>
     <a href="/contact-us.html">Contact Us</a>
@@ -131,6 +133,7 @@ function footer(products) {
           <a href="/blog/">Blog</a>
           <a href="/contact-us.html">Contact Us</a>
           <a href="/zoho-suites.html">Zoho Suites</a>
+          <a href="/platforms/">Other Platforms</a>
           <a href="mailto:${config.email}">${config.email}</a>
           <a href="tel:+${config.phone.href}">${config.phone.display}</a>
         </div>

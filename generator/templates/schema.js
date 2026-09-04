@@ -18,7 +18,7 @@ function organizationSchema() {
     logo: `${config.domain}/images/logo-mark.png`,
     image: `${config.domain}/images/og-banner.jpg`,
     description:
-      "CSP4TECH is a Zoho Authorized Partner in Beirut, Lebanon, providing Zoho CRM, Books, People, and full-suite implementation, migration, and support for Lebanese SMEs and enterprises.",
+      "CSP4TECH is a Zoho Authorized Partner in Beirut, Lebanon, providing Zoho CRM, Books, People, and full-suite implementation, migration, and support for Lebanese SMEs and enterprises. Our team also has hands-on implementation experience with Odoo, Microsoft (Dynamics 365, Power Platform, Microsoft 365), Oracle (NetSuite, Fusion/EBS), and Salesforce.",
     telephone: `+${config.phone.href}`,
     email: config.email,
     address: {
@@ -74,7 +74,10 @@ function articleSchema({ title, excerpt, date, path }) {
   });
 }
 
-function serviceSchema(product) {
+function serviceSchema(product, basePath) {
+  // basePath defaults to the Zoho product pages for backward compatibility;
+  // pass "/platforms/" for the non-Zoho platform pages.
+  const base = basePath || "/zoho-products/";
   return ld({
     "@context": "https://schema.org",
     "@type": "Service",
@@ -83,7 +86,7 @@ function serviceSchema(product) {
     description: product.description,
     provider: { "@type": "Organization", name: config.siteName, url: config.domain },
     areaServed: "Lebanon",
-    url: `${config.domain}/zoho-products/${product.slug}.html`,
+    url: `${config.domain}${base}${product.slug}.html`,
   });
 }
 
