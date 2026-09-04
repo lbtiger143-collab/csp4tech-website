@@ -192,15 +192,18 @@ section { padding: 64px 0; }
 .trusted-logo {
   flex: none;
   display: flex; align-items: center; justify-content: center;
-  height: 56px; min-width: 120px; padding: 0 12px;
+  height: 72px; min-width: 120px; padding: 0 12px;
 }
-/* Real client logos — uniform height, shown in full brand color. Any logo
-   that doesn't have enough native contrast for a white background (e.g. a
-   pale/cream mark) gets that fixed in the source image itself (a baked-in
+/* Real client logos — uniform height, shown in full brand color. Sized a
+   little taller than a typical logo strip so a denser multi-line lockup
+   (icon + wordmark + fine print) stays legible, not just simple single-line
+   wordmarks. Any logo that doesn't have enough native contrast for a white
+   background (e.g. a pale/cream mark) gets that fixed in the source image
+   itself (a baked-in
    card, tighter crop, etc.) rather than a live CSS effect — keeps this
    animation cheap for the browser. */
 .trusted-logo img {
-  max-height: 36px; max-width: 140px; width: auto; object-fit: contain;
+  max-height: 52px; max-width: 200px; width: auto; object-fit: contain;
 }
 @media (prefers-reduced-motion: reduce) {
   .trusted-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
