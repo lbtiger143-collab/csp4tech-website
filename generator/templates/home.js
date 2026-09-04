@@ -29,7 +29,7 @@ module.exports = function home(products, blogPosts) {
 
   <section>
     <div class="container">
-      <p class="text-center" style="font-weight:700;color:var(--color-ink-soft);margin-bottom:20px;">Trusted by businesses across Lebanon</p>
+      <p class="text-center" style="font-weight:700;color:var(--color-ink-soft);margin-bottom:20px;">Trusted by businesses across Lebanon and beyond</p>
       <div class="trusted-marquee">
         <div class="trusted-track">
           ${config.trustedByClients

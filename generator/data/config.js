@@ -36,6 +36,8 @@ module.exports = {
     { name: "Allo Taxi", file: "allo-taxi.png" },
     { name: "Wood & Gas", file: "wood-and-gas.png" },
     { name: "Atelier Trente Trois", file: "atelier-trente-trois.png" },
+    { name: "Morocco Welcome", file: "morocco-welcome.png" },
+    { name: "Ajialouna", file: "ajialouna.png" },
   ],
   nav: {
     productCategories: [

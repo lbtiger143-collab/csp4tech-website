@@ -187,11 +187,19 @@ section { padding: 64px 0; }
 .trusted-logo {
   flex: none;
   display: flex; align-items: center; justify-content: center;
-  height: 56px; min-width: 120px; padding: 0 12px;
+  height: 56px; min-width: 120px; padding: 0 16px;
+  /* Light card behind every logo — keeps pale/light-colored brand marks
+     (not just dark ones) legible against the page's white background. */
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-sm);
 }
-/* Real client logos — uniform height, shown in full brand color. */
+/* Real client logos — uniform height, shown in full brand color. A soft
+   dark halo (shaped by each logo's own alpha channel) keeps very
+   light-colored marks readable without recoloring anyone's logo — it's
+   subtle enough not to change how the already-visible logos look. */
 .trusted-logo img {
   max-height: 36px; max-width: 140px; width: auto; object-fit: contain;
+  filter: drop-shadow(0 0 0.6px rgba(30, 27, 46, 0.35)) drop-shadow(0 0 1.4px rgba(30, 27, 46, 0.22));
 }
 @media (prefers-reduced-motion: reduce) {
   .trusted-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
