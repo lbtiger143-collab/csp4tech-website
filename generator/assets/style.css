@@ -239,6 +239,48 @@ section { padding: 64px 0; }
 .testimonial .who { font-weight: 700; font-style: normal; color: var(--color-ink); font-size: 0.9rem; }
 .testimonial .who span { display: block; font-weight: 500; color: var(--color-ink-soft); font-size: 0.82rem; }
 
+/* ---------- Industries ("Our Service Sector") ---------- */
+.industry-block {
+  display: grid; grid-template-columns: 300px 1fr; gap: 0;
+  background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.industry-tabs { display: flex; flex-direction: column; gap: 6px; background: var(--color-surface-alt); padding: 16px; border-right: 1px solid var(--color-border); }
+.industry-tab {
+  display: flex; align-items: center; gap: 12px; text-align: left;
+  background: transparent; border: 1px solid transparent; border-radius: var(--radius-sm);
+  padding: 12px 14px; font-family: inherit; font-size: 0.95rem; font-weight: 700; color: var(--color-ink);
+  cursor: pointer; transition: background .15s ease, border-color .15s ease;
+}
+.industry-tab:hover { background: #fff; }
+.industry-tab.is-active { background: #fff; border-color: var(--color-border); box-shadow: var(--shadow-sm); }
+.industry-tab-icon {
+  flex: none; width: 36px; height: 36px; border-radius: 10px; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.industry-tab-icon svg { width: 18px; height: 18px; }
+.industry-panels { padding: 40px; }
+.industry-panel-head { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
+.industry-panel-icon {
+  flex: none; width: 52px; height: 52px; border-radius: var(--radius-sm); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.industry-panel-icon svg { width: 26px; height: 26px; }
+.industry-panel-head h3 { margin: 0; font-size: 1.5rem; }
+.industry-panel-desc { font-size: 1rem; margin-bottom: 20px; }
+.industry-benefits-label { display: block; font-weight: 700; color: var(--color-ink); margin-bottom: 10px; }
+.industry-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+.industry-benefits li { position: relative; padding-left: 16px; font-size: 0.95rem; color: var(--color-ink-soft); }
+.industry-benefits li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); }
+
+@media (max-width: 760px) {
+  .industry-block { grid-template-columns: 1fr; }
+  .industry-tabs { flex-direction: row; flex-wrap: wrap; border-right: none; border-bottom: 1px solid var(--color-border); }
+  .industry-tab { flex: 1 1 auto; font-size: 0.85rem; padding: 10px; }
+  .industry-panels { padding: 28px 22px; }
+  .industry-benefits { grid-template-columns: 1fr; }
+}
+
 /* ---------- Legal pages (Privacy / Terms) ---------- */
 .legal-content h2 { font-size: 1.15rem; margin-top: 32px; margin-bottom: 10px; }
 .legal-content p { font-size: 0.95rem; }

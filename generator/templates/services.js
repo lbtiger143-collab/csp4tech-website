@@ -1,4 +1,5 @@
 const platforms = require("../data/platforms");
+const industriesSection = require("./industries");
 
 module.exports = function services() {
   return `
@@ -40,6 +41,8 @@ module.exports = function services() {
       </div>
     </div>
   </section>
+
+  ${industriesSection()}
 
   <section class="section-alt">
     <div class="container">

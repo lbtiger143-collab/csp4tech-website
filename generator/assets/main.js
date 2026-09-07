@@ -63,6 +63,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // ---------- Industries tabs ("Our Service Sector") ----------
+  var industryBlock = document.querySelector("[data-industry-block]");
+  if (industryBlock) {
+    var industryTabs = industryBlock.querySelectorAll("[data-industry-tab]");
+    industryTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        activateIndustryTab(tab);
+      });
+      tab.addEventListener("keydown", function (e) {
+        var list = Array.prototype.slice.call(industryTabs);
+        var idx = list.indexOf(tab);
+        var next = null;
+        if (e.key === "ArrowDown" || e.key === "ArrowRight") next = list[(idx + 1) % list.length];
+        else if (e.key === "ArrowUp" || e.key === "ArrowLeft") next = list[(idx - 1 + list.length) % list.length];
+        if (next) {
+          e.preventDefault();
+          next.focus();
+          activateIndustryTab(next);
+        }
+      });
+    });
+
+    function activateIndustryTab(tab) {
+      var slug = tab.getAttribute("data-industry-tab");
+      industryTabs.forEach(function (t) {
+        var isActive = t === tab;
+        t.classList.toggle("is-active", isActive);
+        t.setAttribute("aria-selected", isActive ? "true" : "false");
+        t.setAttribute("tabindex", isActive ? "0" : "-1");
+      });
+      industryBlock.querySelectorAll(".industry-panel").forEach(function (panel) {
+        panel.toggleAttribute("hidden", panel.id !== "industry-panel-" + slug);
+      });
+    }
+  }
+
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ---------- Scroll-reveal ----------
@@ -72,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // page content visible immediately — this is purely additive polish.
   if (!reduceMotion && "IntersectionObserver" in window) {
     var revealTargets = document.querySelectorAll(
-      ".section-head, .card, .blog-card, .stat-grid > div, .faq details, .trusted-marquee, .related-products, .office-card, .form-card, .contact-info-list .item"
+      ".section-head, .card, .blog-card, .stat-grid > div, .faq details, .trusted-marquee, .related-products, .office-card, .form-card, .contact-info-list .item, .industry-block"
     );
     var revealObserver = new IntersectionObserver(
       function (entries) {
