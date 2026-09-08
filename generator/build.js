@@ -5,7 +5,6 @@ const config = require("./data/config");
 const products = require("./data/products");
 const blogPosts = require("./data/blog");
 const platforms = require("./data/platforms");
-const industries = require("./data/industries");
 
 const { page } = require("./templates/layout");
 const homeTpl = require("./templates/home");
@@ -43,7 +42,6 @@ function copyAssets() {
   fs.mkdirSync(path.join(DIST, "css"), { recursive: true });
   fs.mkdirSync(path.join(DIST, "js"), { recursive: true });
   fs.mkdirSync(path.join(DIST, "images", "clients"), { recursive: true });
-  fs.mkdirSync(path.join(DIST, "images", "industries"), { recursive: true });
   fs.copyFileSync(path.join(assetsDir, "style.css"), path.join(DIST, "css", "style.css"));
   fs.copyFileSync(path.join(assetsDir, "main.js"), path.join(DIST, "js", "main.js"));
   // Real CSP4TECH brand assets (replaced the placeholder recreated mark).
@@ -55,14 +53,6 @@ function copyAssets() {
     fs.copyFileSync(
       path.join(assetsDir, "clients", client.file),
       path.join(DIST, "images", "clients", client.file)
-    );
-  }
-  // Photos for the "Our Service Sector" industries panels (free-license
-  // stock photos, one per industry — see generator/data/industries.js).
-  for (const industry of industries) {
-    fs.copyFileSync(
-      path.join(assetsDir, "industries", industry.image),
-      path.join(DIST, "images", "industries", industry.image)
     );
   }
 }
