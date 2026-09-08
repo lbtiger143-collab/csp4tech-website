@@ -260,6 +260,7 @@ section { padding: 64px 0; }
 }
 .industry-tab-icon svg { width: 18px; height: 18px; }
 .industry-panels { padding: 40px; }
+.industry-panel-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: start; }
 .industry-panel-head { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
 .industry-panel-icon {
   flex: none; width: 52px; height: 52px; border-radius: var(--radius-sm); color: #fff;
@@ -267,11 +268,23 @@ section { padding: 64px 0; }
 }
 .industry-panel-icon svg { width: 26px; height: 26px; }
 .industry-panel-head h3 { margin: 0; font-size: 1.5rem; }
-.industry-panel-desc { font-size: 1rem; margin-bottom: 20px; }
+.industry-panel-desc { font-size: 1rem; margin-bottom: 12px; font-weight: 600; color: var(--color-ink); }
+.industry-panel-detail { font-size: 0.95rem; margin-bottom: 20px; }
 .industry-benefits-label { display: block; font-weight: 700; color: var(--color-ink); margin-bottom: 10px; }
 .industry-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
 .industry-benefits li { position: relative; padding-left: 16px; font-size: 0.95rem; color: var(--color-ink-soft); }
 .industry-benefits li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); }
+.industry-panel-media { position: sticky; top: 90px; }
+.industry-panel-media img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm); border: 1px solid var(--color-border);
+}
+
+@media (max-width: 900px) {
+  .industry-panel-grid { grid-template-columns: 1fr; }
+  .industry-panel-media { position: static; order: -1; }
+  .industry-panel-media img { aspect-ratio: 16 / 9; }
+}
 
 @media (max-width: 760px) {
   .industry-block { grid-template-columns: 1fr; }

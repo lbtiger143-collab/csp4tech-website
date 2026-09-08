@@ -56,15 +56,23 @@ module.exports = function industriesSection() {
             aria-labelledby="industry-tab-${ind.slug}"
             ${i === 0 ? "" : "hidden"}
           >
-            <div class="industry-panel-head">
-              <span class="industry-panel-icon" style="background:${ind.color}">${ICONS[ind.icon]}</span>
-              <h3>${ind.name}</h3>
+            <div class="industry-panel-grid">
+              <div class="industry-panel-text">
+                <div class="industry-panel-head">
+                  <span class="industry-panel-icon" style="background:${ind.color}">${ICONS[ind.icon]}</span>
+                  <h3>${ind.name}</h3>
+                </div>
+                <p class="industry-panel-desc">${ind.description}</p>
+                <p class="industry-panel-detail">${ind.detail}</p>
+                <span class="industry-benefits-label">Key Benefits:</span>
+                <ul class="industry-benefits">
+                  ${ind.benefits.map((b) => `<li>${b}</li>`).join("")}
+                </ul>
+              </div>
+              <div class="industry-panel-media">
+                <img src="/images/industries/${ind.image}" alt="${ind.imageAlt}" loading="lazy" width="600" height="450">
+              </div>
             </div>
-            <p class="industry-panel-desc">${ind.description}</p>
-            <span class="industry-benefits-label">Key Benefits:</span>
-            <ul class="industry-benefits">
-              ${ind.benefits.map((b) => `<li>${b}</li>`).join("")}
-            </ul>
           </div>`
             )
             .join("")}
