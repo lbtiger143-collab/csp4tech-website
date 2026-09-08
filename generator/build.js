@@ -5,6 +5,7 @@ const config = require("./data/config");
 const products = require("./data/products");
 const blogPosts = require("./data/blog");
 const platforms = require("./data/platforms");
+const compares = require("./data/compare");
 
 const { page } = require("./templates/layout");
 const homeTpl = require("./templates/home");
@@ -20,6 +21,8 @@ const privacyTpl = require("./templates/privacy");
 const termsTpl = require("./templates/terms");
 const platformsIndexTpl = require("./templates/platformsIndex");
 const platformPageTpl = require("./templates/platformPage");
+const compareIndexTpl = require("./templates/compareIndex");
+const comparePageTpl = require("./templates/comparePage");
 const { breadcrumbSchema, articleSchema, serviceSchema, faqSchema } = require("./templates/schema");
 const faq = require("./data/faq");
 
@@ -169,6 +172,30 @@ function build() {
     });
   });
 
+  // Compare index (Zoho apps vs competitors — SEO comparison landing pages)
+  emit("compare/index.html", {
+    title: "Zoho vs the Competition | CRM, Accounting, HR & Helpdesk Comparisons | CSP4TECH",
+    description: "Honest, sourced comparisons of Zoho CRM, Books, People, and Desk against Salesforce, QuickBooks, BambooHR, Zendesk, and more.",
+    path: "/compare/",
+    bodyHtml: compareIndexTpl(compares),
+  });
+
+  // Individual comparison pages
+  compares.forEach((c) => {
+    const crumbs = breadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Compare", url: "/compare/" },
+      { name: c.shortTitle, url: `/compare/${c.slug}.html` },
+    ]);
+    emit(`compare/${c.slug}.html`, {
+      title: `${c.title} | CSP4TECH`,
+      description: c.metaDescription,
+      path: `/compare/${c.slug}.html`,
+      bodyHtml: comparePageTpl(c, compares, products),
+      extraHead: crumbs + faqSchema(c.faqs),
+    });
+  });
+
   // Blog index
   emit("blog/index.html", {
     title: "Blog | Practical Zoho Guides | CSP4TECH",
@@ -262,7 +289,16 @@ function build() {
     changefreq: "yearly",
     priority: "0.6",
   }));
-  const allUrls = [...staticUrls, ...productUrls, ...platformUrls, ...blogUrls];
+  const compareUrls = [
+    { loc: "/compare/", lastmod: buildDate, changefreq: "monthly", priority: "0.7" },
+    ...compares.map((c) => ({
+      loc: `/compare/${c.slug}.html`,
+      lastmod: buildDate,
+      changefreq: "monthly",
+      priority: "0.75",
+    })),
+  ];
+  const allUrls = [...staticUrls, ...productUrls, ...platformUrls, ...compareUrls, ...blogUrls];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allUrls
@@ -325,6 +361,10 @@ ${g.items.map((p) => `- [${p.name}](${config.domain}/zoho-products/${p.slug}.htm
 ## Other platforms (implementation experience, not a formal certification/partnership)
 
 ${platforms.map((p) => `- [${p.name}](${config.domain}/platforms/${p.slug}.html): ${p.tagline}`).join("\n")}
+
+## Comparisons
+
+${compares.map((c) => `- [${c.shortTitle}](${config.domain}/compare/${c.slug}.html): ${c.metaDescription}`).join("\n")}
 
 ## Blog
 
