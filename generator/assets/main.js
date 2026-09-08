@@ -1,5 +1,7 @@
 // Zero-dependency site JS: mobile nav toggle + basic contact form UX feedback.
 document.addEventListener("DOMContentLoaded", function () {
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   var toggle = document.querySelector(".menu-toggle");
   var mobileNav = document.querySelector(".mobile-nav");
   if (toggle && mobileNav) {
@@ -99,8 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   // ---------- Scroll-reveal ----------
   // Fade/slide common content blocks in as they enter the viewport. Applied
   // entirely from JS (not baked into the server-rendered HTML) so anyone
@@ -162,5 +162,37 @@ document.addEventListener("DOMContentLoaded", function () {
       { threshold: 0.4 }
     );
     statEls.forEach(function (el) { statObserver.observe(el); });
+  }
+
+  // ---------- Header scroll shadow + back-to-top button ----------
+  // A single passive, rAF-throttled scroll listener drives both — cheap
+  // (just a scrollY read plus two classList toggles) and never runs more
+  // than once per animation frame, so it can't cause scroll jank.
+  var header = document.querySelector(".site-header");
+  var backToTop = document.querySelector(".back-to-top");
+  if (header || backToTop) {
+    var scrollTicking = false;
+    var updateOnScroll = function () {
+      var y = window.scrollY || window.pageYOffset;
+      if (header) header.classList.toggle("is-scrolled", y > 40);
+      if (backToTop) backToTop.classList.toggle("is-visible", y > 600);
+      scrollTicking = false;
+    };
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!scrollTicking) {
+          scrollTicking = true;
+          requestAnimationFrame(updateOnScroll);
+        }
+      },
+      { passive: true }
+    );
+    updateOnScroll();
+  }
+  if (backToTop) {
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
   }
 });
