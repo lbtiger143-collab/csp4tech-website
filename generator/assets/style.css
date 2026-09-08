@@ -357,6 +357,12 @@ section { padding: 64px 0; }
 .product-hero .category-tag { display: inline-block; background: var(--color-primary-light); color: var(--color-primary-dark); padding: 5px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; margin-bottom: 14px; }
 .product-hero h1 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
 .product-hero .tagline { font-size: 1.05rem; }
+.product-hero-icon-row { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.product-hero-icon { width: 56px; height: 56px; object-fit: contain; padding: 8px; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); flex: none; }
+
+/* Official Zoho app logos on product cards and in nav menus */
+.card .product-logo { width: 40px; height: 40px; object-fit: contain; margin-bottom: 14px; }
+.nav-app-icon { width: 16px; height: 16px; object-fit: contain; vertical-align: -3px; margin-right: 7px; }
 
 .related-products { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px; }
 .related-products a { display: block; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 14px 16px; font-weight: 700; font-size: 0.9rem; }

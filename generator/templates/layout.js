@@ -23,7 +23,7 @@ function megaMenu(products) {
           (g) => `
       <div class="mega-col">
         <h4>${g.category}</h4>
-        ${g.items.map((p) => `<a href="/zoho-products/${p.slug}.html">${p.name}</a>`).join("")}
+        ${g.items.map((p) => `<a href="/zoho-products/${p.slug}.html">${p.logo ? `<img src="/images/logos/${p.logo}" alt="" width="16" height="16" class="nav-app-icon">` : ""}${p.name}</a>`).join("")}
       </div>`
         )
         .join("")}
@@ -43,7 +43,7 @@ function mobileProductGroups(products) {
     <details>
       <summary>${g.category}</summary>
       <div>
-        ${g.items.map((p) => `<a href="/zoho-products/${p.slug}.html">${p.name}</a>`).join("")}
+        ${g.items.map((p) => `<a href="/zoho-products/${p.slug}.html">${p.logo ? `<img src="/images/logos/${p.logo}" alt="" width="16" height="16" class="nav-app-icon">` : ""}${p.name}</a>`).join("")}
       </div>
     </details>`
     )

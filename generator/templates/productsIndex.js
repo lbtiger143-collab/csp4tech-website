@@ -21,6 +21,7 @@ module.exports = function productsIndex(products) {
           .map(
             (p) => `
         <a href="/zoho-products/${p.slug}.html" class="card">
+          ${p.logo ? `<img src="/images/logos/${p.logo}" alt="" class="product-logo" width="40" height="40">` : ""}
           <h3>${p.name}</h3>
           <p>${p.tagline}</p>
         </a>`

@@ -7,7 +7,10 @@ module.exports = function productPage(product, allProducts) {
   <section class="product-hero">
     <div class="container">
       <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/zoho-products/">Zoho Products</a><span>/</span>${product.name}</p>
-      <span class="category-tag">${product.category}</span>
+      <div class="product-hero-icon-row">
+        ${product.logo ? `<img src="/images/logos/${product.logo}" alt="" class="product-hero-icon" width="56" height="56">` : ""}
+        <span class="category-tag" style="margin-bottom:0;">${product.category}</span>
+      </div>
       <h1>${product.name}</h1>
       <p class="tagline lead" style="margin-bottom:24px;">${product.tagline}</p>
       <div class="hero-actions" style="justify-content:flex-start;">

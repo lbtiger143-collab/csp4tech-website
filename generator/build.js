@@ -69,6 +69,15 @@ function copyAssets() {
       );
     }
   }
+  // Official Zoho per-app logo icons (128px), supplied by the client from
+  // their Zoho Partner Portal branding kit — used on product cards/hero.
+  const logosDir = path.join(assetsDir, "logos");
+  if (fs.existsSync(logosDir)) {
+    fs.mkdirSync(path.join(DIST, "images", "logos"), { recursive: true });
+    for (const file of fs.readdirSync(logosDir)) {
+      fs.copyFileSync(path.join(logosDir, file), path.join(DIST, "images", "logos", file));
+    }
+  }
 }
 
 let pageCount = 0;
