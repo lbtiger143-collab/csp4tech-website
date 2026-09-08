@@ -3,10 +3,15 @@ const config = require("../data/config");
 module.exports = function about() {
   return `
   <section class="hero" style="padding-bottom:40px;">
-    <div class="container hero-inner">
-      <span class="eyebrow">About CSP4TECH</span>
-      <h1>Empowering businesses through Zoho — from Lebanon to the world</h1>
-      <p class="lead">We're a Beirut-based Zoho Authorized Partner helping SMEs and enterprises — in Lebanon and around the world — run their operations on one connected platform: implementation, migration, training, and support, delivered by a team that actually picks up the phone.</p>
+    <div class="container hero-inner has-media">
+      <div class="hero-text">
+        <span class="eyebrow">About CSP4TECH</span>
+        <h1>Empowering businesses through Zoho — from Lebanon to the world</h1>
+        <p class="lead">We're a Beirut-based Zoho Authorized Partner helping SMEs and enterprises — in Lebanon and around the world — run their operations on one connected platform: implementation, migration, training, and support, delivered by a team that actually picks up the phone.</p>
+      </div>
+      <div class="hero-media">
+        <img src="/images/illustrations/about.svg" alt="Illustration of a team working together" width="889" height="880" loading="eager">
+      </div>
     </div>
   </section>
 

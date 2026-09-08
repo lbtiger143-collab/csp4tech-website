@@ -8,10 +8,15 @@ module.exports = function suites(products) {
 
   return `
   <section class="hero" style="padding-bottom:36px;">
-    <div class="container hero-inner">
-      <span class="eyebrow">Zoho Suites</span>
-      <h1>Compare Zoho's bundled suites</h1>
-      <p class="lead">If you need more than one Zoho app, a bundled suite is usually cheaper and more integrated than buying apps one at a time. Here's how they compare.</p>
+    <div class="container hero-inner has-media">
+      <div class="hero-text">
+        <span class="eyebrow">Zoho Suites</span>
+        <h1>Compare Zoho's bundled suites</h1>
+        <p class="lead">If you need more than one Zoho app, a bundled suite is usually cheaper and more integrated than buying apps one at a time. Here's how they compare.</p>
+      </div>
+      <div class="hero-media">
+        <img src="/images/illustrations/suites.svg" alt="Illustration of a person at a decision point signpost" width="806" height="800" loading="eager">
+      </div>
     </div>
   </section>
 

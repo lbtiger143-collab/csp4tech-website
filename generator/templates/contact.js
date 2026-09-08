@@ -3,10 +3,15 @@ const config = require("../data/config");
 module.exports = function contact() {
   return `
   <section class="hero" style="padding-bottom:40px;">
-    <div class="container hero-inner">
-      <span class="eyebrow">Contact CSP4TECH</span>
-      <h1>Let's talk about your Zoho setup</h1>
-      <p class="lead">Free initial consultation. Typical reply time: one business day.</p>
+    <div class="container hero-inner has-media">
+      <div class="hero-text">
+        <span class="eyebrow">Contact CSP4TECH</span>
+        <h1>Let's talk about your Zoho setup</h1>
+        <p class="lead">Free initial consultation. Typical reply time: one business day.</p>
+      </div>
+      <div class="hero-media">
+        <img src="/images/illustrations/contact.svg" alt="Illustration of a person sending a message" width="960" height="462" loading="eager">
+      </div>
     </div>
   </section>
 

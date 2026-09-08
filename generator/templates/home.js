@@ -10,19 +10,24 @@ module.exports = function home(products, blogPosts) {
 
   return `
   <section class="hero">
-    <div class="container hero-inner">
-      <img src="/images/zoho-partner-badge.png" alt="Zoho Authorized Partner badge" class="partner-badge" width="220" height="61">
-      <h1>Certified Zoho Partner — Based in Lebanon, Serving <em>Clients Worldwide</em></h1>
-      <p class="lead">End-to-end Zoho consulting: implementation, migration, integrations, and ongoing support across the full Zoho suite — delivered remotely to clients anywhere, with Arabic/English (RTL) experience and a Beirut-based team.</p>
-      <div class="hero-actions">
-        <a href="/contact-us.html" class="btn btn-primary">Get a Free Consultation</a>
-        <a href="/zoho-products/" class="btn btn-ghost">Browse Zoho Products</a>
+    <div class="container hero-inner has-media">
+      <div class="hero-text">
+        <img src="/images/zoho-partner-badge.png" alt="Zoho Authorized Partner badge" class="partner-badge" width="220" height="61">
+        <h1>Certified Zoho Partner — Based in Lebanon, Serving <em>Clients Worldwide</em></h1>
+        <p class="lead">End-to-end Zoho consulting: implementation, migration, integrations, and ongoing support across the full Zoho suite — delivered remotely to clients anywhere, with Arabic/English (RTL) experience and a Beirut-based team.</p>
+        <div class="hero-actions">
+          <a href="/contact-us.html" class="btn btn-primary">Get a Free Consultation</a>
+          <a href="/zoho-products/" class="btn btn-ghost">Browse Zoho Products</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Implementation &amp; Migration</span>
+          <span class="pill">Arabic/English &amp; RTL</span>
+          <span class="pill">Integrations &amp; APIs</span>
+          <span class="pill">Training &amp; Support</span>
+        </div>
       </div>
-      <div class="pill-row">
-        <span class="pill">Implementation &amp; Migration</span>
-        <span class="pill">Arabic/English &amp; RTL</span>
-        <span class="pill">Integrations &amp; APIs</span>
-        <span class="pill">Training &amp; Support</span>
+      <div class="hero-media">
+        <img src="/images/illustrations/home.svg" alt="Illustration of two people shaking hands over a successful partnership" width="951" height="428" loading="eager">
       </div>
     </div>
   </section>

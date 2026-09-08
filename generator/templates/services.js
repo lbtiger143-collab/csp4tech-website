@@ -4,10 +4,15 @@ const industriesSection = require("./industries");
 module.exports = function services() {
   return `
   <section class="hero" style="padding-bottom:36px;">
-    <div class="container hero-inner">
-      <span class="eyebrow">Services</span>
-      <h1>Zoho services, from first workflow to ongoing support</h1>
-      <p class="lead">We don't just switch on software — we configure it around how your business actually runs, then stay involved after go-live.</p>
+    <div class="container hero-inner has-media">
+      <div class="hero-text">
+        <span class="eyebrow">Services</span>
+        <h1>Zoho services, from first workflow to ongoing support</h1>
+        <p class="lead">We don't just switch on software — we configure it around how your business actually runs, then stay involved after go-live.</p>
+      </div>
+      <div class="hero-media">
+        <img src="/images/illustrations/services.svg" alt="Illustration of a person walking through a step-by-step process" width="744" height="800" loading="eager">
+      </div>
     </div>
   </section>
 

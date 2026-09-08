@@ -55,6 +55,17 @@ function copyAssets() {
       path.join(DIST, "images", "clients", client.file)
     );
   }
+  // Hero illustrations (unDraw, recolored to brand teal) for the main pages.
+  const illustrationsDir = path.join(assetsDir, "illustrations");
+  if (fs.existsSync(illustrationsDir)) {
+    fs.mkdirSync(path.join(DIST, "images", "illustrations"), { recursive: true });
+    for (const file of fs.readdirSync(illustrationsDir)) {
+      fs.copyFileSync(
+        path.join(illustrationsDir, file),
+        path.join(DIST, "images", "illustrations", file)
+      );
+    }
+  }
 }
 
 let pageCount = 0;
