@@ -183,7 +183,7 @@ module.exports = [
     useCase: "Best for operations teams standardizing processes that currently run on habit and memory."
   },
   {
-    slug: "serviceplus", name: "Zoho Service Plus", category: "Service & Support",
+    slug: "serviceplus", name: "Zoho Service Plus", category: "Service & Support", logo: "serviceplus.png",
     tagline: "Support, remote assistance, and field service, unified.",
     description: "Service Plus bundles Desk, Assist, Lens, and more into one customer service platform, so every support channel reports into the same ticket and customer history.",
     features: ["Unified service console", "Cross-channel ticket history", "Shared SLAs", "Consolidated service analytics"],
