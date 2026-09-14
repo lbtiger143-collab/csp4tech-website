@@ -433,7 +433,7 @@ section { padding: 64px 0; }
 .footer-grid h4 { color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 14px; }
 .footer-grid a { display: block; padding: 5px 0; font-size: 0.88rem; color: #C7C6F5; }
 .footer-grid a:hover { color: #fff; }
-.footer-app-icon { width: 14px; height: 14px; object-fit: contain; vertical-align: -2px; margin-right: 7px; background: #fff; border-radius: 3px; padding: 1px; }
+.footer-app-icon { width: 20px; height: 20px; object-fit: contain; vertical-align: -5px; margin-right: 8px; background: #fff; border-radius: 5px; padding: 2px; }
 .footer-brand { color: #fff; font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 20px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 0.82rem; }
 .social-row { display: flex; gap: 10px; }

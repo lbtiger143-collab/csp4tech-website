@@ -60,7 +60,7 @@ module.exports = [
     useCase: "Best for SMEs that need proper books without hiring a full finance team."
   },
   {
-    slug: "billing", name: "Zoho Billing", category: "Finance & Operations",
+    slug: "billing", logo: "billing.png", name: "Zoho Billing", category: "Finance & Operations",
     tagline: "Subscriptions and recurring invoices, handled automatically.",
     description: "Billing manages recurring plans, metered usage, and dunning for subscription businesses, syncing revenue straight into Zoho Books so finance never reconciles by hand.",
     features: ["Recurring & usage-based billing", "Automated dunning & retries", "Customer self-service portal", "Revenue recognition reports"],
