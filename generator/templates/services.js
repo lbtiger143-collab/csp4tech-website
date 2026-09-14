@@ -76,6 +76,7 @@ module.exports = function services() {
           .map(
             (p) => `
         <a href="/platforms/${p.slug}.html" class="card">
+          ${p.logo ? `<img src="/images/platform-logos/${p.logo}" alt="" class="platform-logo" height="28" style="height:28px;margin-bottom:10px;">` : ""}
           <h3 style="font-size:1.05rem;">${p.name}</h3>
           <p style="font-size:.85rem;">${p.tagline}</p>
         </a>`
