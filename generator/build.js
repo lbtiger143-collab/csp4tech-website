@@ -78,6 +78,17 @@ function copyAssets() {
       fs.copyFileSync(path.join(logosDir, file), path.join(DIST, "images", "logos", file));
     }
   }
+  // Official brand logos for the "Other Platforms" we implement (Odoo,
+  // Microsoft, Oracle, Salesforce, Shopify) — sourced from each company's
+  // own Wikimedia Commons / Simple Icons brand assets, used only to
+  // identify the platform (nominative use), never to claim certification.
+  const platformLogosDir = path.join(assetsDir, "platform-logos");
+  if (fs.existsSync(platformLogosDir)) {
+    fs.mkdirSync(path.join(DIST, "images", "platform-logos"), { recursive: true });
+    for (const file of fs.readdirSync(platformLogosDir)) {
+      fs.copyFileSync(path.join(platformLogosDir, file), path.join(DIST, "images", "platform-logos", file));
+    }
+  }
 }
 
 let pageCount = 0;
@@ -186,7 +197,7 @@ function build() {
     title: "Zoho vs the Competition | CRM, Accounting, HR & Helpdesk Comparisons | CSP4TECH",
     description: "Honest, sourced comparisons of Zoho CRM, Books, People, and Desk against Salesforce, QuickBooks, BambooHR, Zendesk, and more.",
     path: "/compare/",
-    bodyHtml: compareIndexTpl(compares),
+    bodyHtml: compareIndexTpl(compares, products),
   });
 
   // Individual comparison pages

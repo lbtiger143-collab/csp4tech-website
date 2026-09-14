@@ -15,6 +15,7 @@ module.exports = function platformsIndex(platforms) {
           .map(
             (p) => `
         <a href="/platforms/${p.slug}.html" class="card">
+          ${p.logo ? `<img src="/images/platform-logos/${p.logo}" alt="" class="platform-logo" height="32">` : ""}
           <h3>${p.name}</h3>
           <p>${p.tagline}</p>
         </a>`

@@ -6,6 +6,7 @@
 module.exports = [
   {
     slug: "odoo",
+    logo: "odoo.svg",
     name: "Odoo",
     tagline: "Flexible open-source ERP implementation and support",
     description:
@@ -21,6 +22,7 @@ module.exports = [
   },
   {
     slug: "microsoft",
+    logo: "microsoft.svg",
     name: "Microsoft",
     tagline: "Dynamics 365, Power Platform & Microsoft 365 implementation",
     description:
@@ -36,6 +38,7 @@ module.exports = [
   },
   {
     slug: "oracle",
+    logo: "oracle.svg",
     name: "Oracle",
     tagline: "NetSuite and Oracle Fusion/EBS implementation and support",
     description:
@@ -51,6 +54,7 @@ module.exports = [
   },
   {
     slug: "salesforce",
+    logo: "salesforce.svg",
     name: "Salesforce",
     tagline: "Salesforce CRM implementation, customization & support",
     description:
@@ -66,6 +70,7 @@ module.exports = [
   },
   {
     slug: "shopify",
+    logo: "shopify.svg",
     name: "Shopify",
     tagline: "Shopify store setup, customization & backend integration",
     description:

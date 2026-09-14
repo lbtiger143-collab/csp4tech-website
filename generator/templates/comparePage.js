@@ -17,11 +17,14 @@ module.exports = function comparePage(entry, allCompares, products) {
   <section class="product-hero">
     <div class="container">
       <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/compare/">Compare</a><span>/</span>${entry.shortTitle}</p>
-      <span class="category-tag">${entry.kicker}</span>
+      <div class="product-hero-icon-row">
+        ${zohoProduct && zohoProduct.logo ? `<img src="/images/logos/${zohoProduct.logo}" alt="" class="product-hero-icon" width="56" height="56">` : ""}
+        <span class="category-tag" style="margin-bottom:0;">${entry.kicker}</span>
+      </div>
       <h1>${entry.title}</h1>
       <div class="hero-actions" style="justify-content:flex-start;margin-top:20px;margin-bottom:0;">
         <a href="/contact-us.html" class="btn btn-primary">Get a Free Consultation</a>
-        ${zohoProduct ? `<a href="/zoho-products/${zohoProduct.slug}.html" class="btn btn-ghost">See ${zohoProduct.name} details</a>` : ""}
+        ${zohoProduct ? `<a href="/zoho-products/${zohoProduct.slug}.html" class="btn btn-ghost">${zohoProduct.logo ? `<img src="/images/logos/${zohoProduct.logo}" alt="" width="16" height="16" class="nav-app-icon" style="margin-right:6px;">` : ""}See ${zohoProduct.name} details</a>` : ""}
       </div>
     </div>
   </section>

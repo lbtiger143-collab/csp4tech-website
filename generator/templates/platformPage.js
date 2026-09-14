@@ -7,7 +7,10 @@ module.exports = function platformPage(platform, allPlatforms) {
   <section class="product-hero">
     <div class="container">
       <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/platforms/">Other Platforms</a><span>/</span>${platform.name}</p>
-      <span class="category-tag">Also implemented by CSP4TECH</span>
+      <div class="product-hero-icon-row">
+        ${platform.logo ? `<img src="/images/platform-logos/${platform.logo}" alt="" class="platform-hero-icon" height="40">` : ""}
+        <span class="category-tag" style="margin-bottom:0;">Also implemented by CSP4TECH</span>
+      </div>
       <h1>${platform.name}</h1>
       <p class="tagline lead" style="margin-bottom:24px;">${platform.tagline}</p>
       <div class="hero-actions" style="justify-content:flex-start;">

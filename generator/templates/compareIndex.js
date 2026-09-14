@@ -1,4 +1,4 @@
-module.exports = function compareIndex(compares) {
+module.exports = function compareIndex(compares, products) {
   return `
   <section class="hero" style="padding-bottom:36px;">
     <div class="container hero-inner">
@@ -15,6 +15,10 @@ module.exports = function compareIndex(compares) {
           .map(
             (c) => `
         <a href="/compare/${c.slug}.html" class="card">
+          ${(() => {
+            const zp = products && products.find((p) => p.slug === c.zohoProductSlug);
+            return zp && zp.logo ? `<img src="/images/logos/${zp.logo}" alt="" class="product-logo" width="40" height="40">` : "";
+          })()}
           <span class="compare-kicker-tag">${c.kicker}</span>
           <h3>${c.shortTitle}</h3>
           <p>${c.metaDescription}</p>

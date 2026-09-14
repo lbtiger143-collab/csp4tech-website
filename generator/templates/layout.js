@@ -124,7 +124,7 @@ function footer(products) {
           <h4>${g.category}</h4>
           ${g.items
             .slice(0, 6)
-            .map((p) => `<a href="/zoho-products/${p.slug}.html">${p.name}</a>`)
+            .map((p) => `<a href="/zoho-products/${p.slug}.html">${p.logo ? `<img src="/images/logos/${p.logo}" alt="" width="14" height="14" class="footer-app-icon">` : ""}${p.name}</a>`)
             .join("")}
         </div>`
           )

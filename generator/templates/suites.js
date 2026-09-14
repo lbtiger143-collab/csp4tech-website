@@ -24,7 +24,7 @@ module.exports = function suites(products) {
     <div class="container">
       <div class="card" style="border-color:var(--color-primary);">
         <span class="category-tag">Everything, in one license</span>
-        <h2 style="margin-top:8px;">${one.name}</h2>
+        <h2 style="margin-top:8px;display:flex;align-items:center;gap:12px;">${one.logo ? `<img src="/images/logos/${one.logo}" alt="" width="36" height="36" style="object-fit:contain;">` : ""}${one.name}</h2>
         <p>${one.description}</p>
         <ul class="feature-list" style="margin-top:14px;">
           ${one.features.map((f) => `<li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>${f}</li>`).join("")}
@@ -45,7 +45,7 @@ module.exports = function suites(products) {
           .map(
             (p) => `
         <div class="card">
-          <h3>${p.name}</h3>
+          <h3 style="display:flex;align-items:center;gap:10px;">${p.logo ? `<img src="/images/logos/${p.logo}" alt="" width="28" height="28" style="object-fit:contain;">` : ""}${p.name}</h3>
           <p>${p.description}</p>
           <ul class="feature-list" style="margin-top:10px;">
             ${p.features.slice(0, 3).map((f) => `<li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>${f}</li>`).join("")}
