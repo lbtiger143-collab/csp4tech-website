@@ -61,7 +61,7 @@ module.exports = function platformPage(platform, allPlatforms) {
         <h2>We also work with</h2>
       </div>
       <div class="related-products">
-        ${others.map((p) => `<a href="/platforms/${p.slug}.html">${p.name}</a>`).join("")}
+        ${others.map((p) => `<a href="/platforms/${p.slug}.html">${p.logo ? `<img src="/images/platform-logos/${p.logo}" alt="" width="16" height="16" class="nav-app-icon">` : ""}${p.name}</a>`).join("")}
       </div>
     </div>
   </section>`

@@ -55,6 +55,21 @@ module.exports = function about() {
     </div>
   </section>
 
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Compliance</span>
+        <h2>Wired correctly for Lebanon from day one</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="card"><div class="icon">🧾</div><h3>NSSF</h3><p style="font-size:.9rem;">Payroll and Zoho People set up around real NSSF contribution rules, not a generic template.</p></div>
+        <div class="card"><div class="icon">💵</div><h3>VAT invoicing</h3><p style="font-size:.9rem;">Zoho Books configured for Lebanese VAT — correct rates, invoice formatting, and filing-ready reports.</p></div>
+        <div class="card"><div class="icon">🏦</div><h3>Income tax (MOF)</h3><p style="font-size:.9rem;">Chart of accounts and reporting mapped to what your accountant needs for Ministry of Finance filings.</p></div>
+        <div class="card"><div class="icon">🔁</div><h3>LBP/USD multi-currency</h3><p style="font-size:.9rem;">Dual-currency invoicing and reporting, built for how Lebanese businesses actually price and get paid.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-alt">
     <div class="container">
       <div class="section-head">

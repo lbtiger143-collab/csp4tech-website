@@ -89,6 +89,17 @@ function copyAssets() {
       fs.copyFileSync(path.join(platformLogosDir, file), path.join(DIST, "images", "platform-logos", file));
     }
   }
+  // Third-party integration logos (WhatsApp, Google Workspace, Slack,
+  // Stripe, Zapier) for the homepage "works with your stack" strip —
+  // official brand assets, nominative use only. Shopify/Microsoft 365 in
+  // that same strip reuse the files already copied above.
+  const integrationLogosDir = path.join(assetsDir, "integration-logos");
+  if (fs.existsSync(integrationLogosDir)) {
+    fs.mkdirSync(path.join(DIST, "images", "integration-logos"), { recursive: true });
+    for (const file of fs.readdirSync(integrationLogosDir)) {
+      fs.copyFileSync(path.join(integrationLogosDir, file), path.join(DIST, "images", "integration-logos", file));
+    }
+  }
 }
 
 let pageCount = 0;

@@ -115,7 +115,13 @@ module.exports = function comparePage(entry, allCompares, products) {
         <h2>See how other Zoho apps compare</h2>
       </div>
       <div class="related-products">
-        ${others.map((c) => `<a href="/compare/${c.slug}.html">${c.shortTitle}</a>`).join("")}
+        ${others
+          .map((c) => {
+            const zp = products.find((p) => p.slug === c.zohoProductSlug);
+            const icon = zp && zp.logo ? `<img src="/images/logos/${zp.logo}" alt="" width="16" height="16" class="nav-app-icon">` : "";
+            return `<a href="/compare/${c.slug}.html">${icon}${c.shortTitle}</a>`;
+          })
+          .join("")}
       </div>
     </div>
   </section>`

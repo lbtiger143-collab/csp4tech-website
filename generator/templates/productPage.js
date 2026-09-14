@@ -61,7 +61,7 @@ module.exports = function productPage(product, allProducts) {
         <h2>Other apps in ${product.category}</h2>
       </div>
       <div class="related-products">
-        ${related.map((p) => `<a href="/zoho-products/${p.slug}.html">${p.name}</a>`).join("")}
+        ${related.map((p) => `<a href="/zoho-products/${p.slug}.html">${p.logo ? `<img src="/images/logos/${p.logo}" alt="" width="16" height="16" class="nav-app-icon">` : ""}${p.name}</a>`).join("")}
       </div>
     </div>
   </section>`

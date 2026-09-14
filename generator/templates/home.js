@@ -1,6 +1,7 @@
 const config = require("../data/config");
 const faq = require("../data/faq");
 const platforms = require("../data/platforms");
+const integrations = require("../data/integrations");
 
 module.exports = function home(products, blogPosts) {
   const featured = products.filter((p) =>
@@ -87,6 +88,7 @@ module.exports = function home(products, blogPosts) {
           .map(
             (p) => `
         <div class="card">
+          ${p.logo ? `<img src="/images/logos/${p.logo}" alt="" class="product-logo" width="40" height="40">` : ""}
           <h3>${p.name}</h3>
           <p>${p.tagline}</p>
           <a href="/zoho-products/${p.slug}.html" class="btn btn-ghost btn-sm" style="margin-top:10px;">Learn more</a>
@@ -95,6 +97,26 @@ module.exports = function home(products, blogPosts) {
           .join("")}
       </div>
       <p class="text-center" style="margin-top:28px;"><a href="/zoho-products/" class="btn btn-primary">Browse all 39 Zoho apps</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Connected stack</span>
+        <h2>Works with the tools your team already uses</h2>
+      </div>
+      <div class="trusted-marquee">
+        <div class="trusted-track">
+          ${integrations
+            .map((i) => `<div class="trusted-logo"><img src="/images/${i.dir}/${i.file}" alt="${i.name}" loading="lazy"></div>`)
+            .join("")}
+          ${integrations
+            .map((i) => `<div class="trusted-logo trusted-dup" aria-hidden="true"><img src="/images/${i.dir}/${i.file}" alt="" loading="lazy"></div>`)
+            .join("")}
+        </div>
+      </div>
+      <p class="text-center" style="margin-top:18px;font-size:.85rem;color:var(--color-ink-soft);">Zoho and Odoo connect natively (or via Zoho Flow / Deluge / API) to the messaging, payments, and productivity tools shown above — this isn't an exhaustive list, just the ones we're asked about most.</p>
     </div>
   </section>
 
